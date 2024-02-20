@@ -1,3 +1,4 @@
+import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import "./globals.css";
 
@@ -8,7 +9,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        {/* Layout UI */}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
