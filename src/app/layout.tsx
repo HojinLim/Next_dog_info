@@ -1,17 +1,31 @@
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import "./globals.css";
+async function getCategory() {
+  const res = await fetch("https://dog.ceo/api/breeds/list/all", {
+    cache: "force-cache",
+  });
 
-export default function RootLayout({
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const data = await getCategory();
+  const sorts = Object.keys(data.message);
+
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
         {/* Layout UI */}
-        <Navbar />
+        <Navbar sorts={sorts} />
         <main>{children}</main>
         <Footer />
       </body>
