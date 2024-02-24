@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getData(params.slug);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12">
+    <main className="flex flex-col items-center justify-between p-12">
       <h1 className="text-3xl font-bold text-center mb-8">{params.slug}</h1>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
