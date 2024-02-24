@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "@/src/assets/logo.png";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import ScrollToTopButton from "./ScrollToTopButton";
 export const Navbar = (sorts: { sorts: string[] }) => {
   const router = useRouter();
   return (

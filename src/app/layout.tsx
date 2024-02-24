@@ -1,5 +1,6 @@
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import "./globals.css";
 async function getCategory() {
   const res = await fetch("https://dog.ceo/api/breeds/list/all", {
@@ -27,6 +28,7 @@ export default async function RootLayout({
         {/* Layout UI */}
         <Navbar sorts={sorts} />
         <main>{children}</main>
+        <ScrollToTopButton />
         <Footer />
       </body>
     </html>
