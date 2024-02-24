@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {data.message.slice(0, 25).map((imgurl: string) => (
           <Image
-            className="rounded-lg"
+            className="rounded-lg transition-transform duration-500 hover:border-2 hover:border-black"
             key={imgurl}
             src={imgurl}
             width={500}
