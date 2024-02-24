@@ -26,18 +26,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
             className="rounded-lg overflow-hidden transition-transform duration-500 hover:border-2 hover:border-black"
             style={{ aspectRatio: "1 / 1" }} // 유지하고자 하는 가로 세로 비율에 맞춰 조정
           >
-            {/* <img
-              src={imgurl}
-              alt="Picture of the dog"
-              className="object-cover w-full h-full"
-              style={{ minHeight: 0 }} // 이미지의 최소 높이를 0으로 설정하여 공백을 일정하게 만듦
-            /> */}
             <Image
               src={imgurl}
               alt="Picture of the dog"
               className="object-cover w-full h-full"
               width={500}
               height={500}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPMqAcAAVUA6UpAAT4AAAAASUVORK5CYII="
             />
           </div>
         ))}
