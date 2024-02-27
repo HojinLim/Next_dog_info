@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { lusitana } from "@/src/app/ui/fonts";
 
 async function getData(slug: string) {
   const res = await fetch(`https://dog.ceo/api/breed/${slug}/images`);
@@ -15,8 +16,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getData(params.slug);
 
   return (
-    <main className="flex flex-col items-center justify-between p-12">
-      <h1 className="text-3xl font-bold text-center mb-8">{params.slug}</h1>
+    <main
+      className={`${lusitana.className} flex-col items-center justify-between p-12`}
+    >
+      <h1 className="text-3xl font-bold text-left mb-8 underline">
+        {params.slug}
+      </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {data.message.slice(0, 25).map((imgurl: string) => (

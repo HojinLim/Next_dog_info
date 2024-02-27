@@ -2,6 +2,7 @@ import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import "./globals.css";
+import { inter } from "@/src/app/ui/fonts";
 async function getCategory() {
   const res = await fetch("https://dog.ceo/api/breeds/list/all", {
     cache: "force-cache",
@@ -24,7 +25,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body
+        className={`${inter.className} antialiased`}
+        suppressHydrationWarning={true}
+      >
         {/* Layout UI */}
         <Navbar sorts={sorts} />
         <main>{children}</main>

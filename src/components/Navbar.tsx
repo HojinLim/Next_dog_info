@@ -1,10 +1,11 @@
+
 "use client";
 
 import Image from "next/image";
 import logo from "@/src/assets/logo.png";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import ScrollToTopButton from "./ScrollToTopButton";
+
 export const Navbar = (sorts: { sorts: string[] }) => {
   const router = useRouter();
   return (
@@ -29,9 +30,9 @@ export const Navbar = (sorts: { sorts: string[] }) => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box "
           >
-            {sorts.sorts.slice(0, 25).map((sort, key) => (
+            {sorts.sorts.map((sort, key) => (
               <li key={key}>
                 <a onClick={() => router.push(`/dogs/${sort}`)}>{sort}</a>
               </li>
