@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -32,7 +31,7 @@ export const Navbar = (sorts: { sorts: string[] }) => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box "
           >
-            {sorts.sorts.map((sort, key) => (
+            {sorts.sorts.slice(0, 25).map((sort, key) => (
               <li key={key}>
                 <a onClick={() => router.push(`/dogs/${sort}`)}>{sort}</a>
               </li>
