@@ -12,12 +12,12 @@ export const RandomImage = ({ imageData }: { imageData: ImageProps }) => {
   return (
     <>
       <Image
-        className="rounded-lg overflow-hidden transition-transform duration-500 hover:border-2 hover:border-black mb-6"
+        className="rounded-lg overflow-hidden transition-transform duration-500 hover:border-2 hover:border-black"
         style={{ aspectRatio: "1 / 1" }}
         src={image.message}
         alt="logo"
-        width={600}
-        height={600}
+        width={450}
+        height={450}
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPMqAcAAVUA6UpAAT4AAAAASUVORK5CYII="
       />
