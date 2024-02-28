@@ -1,3 +1,4 @@
+// NEXT font 설정
 import { Inter, Lusitana } from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'] });
