@@ -1,14 +1,5 @@
 import { RandomImage } from "../components/RandomImage";
-
-export async function getRandomPic() {
-  const res = await fetch("https://dog.ceo/api/breeds/image/random");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+import { getRandomPic } from "./functions/getRandomPic";
 
 export default async function RootPage() {
   const data = await getRandomPic();

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { ImageProps } from "../types";
 import { useState } from "react";
-import { getRandomPic } from "../app/page";
+import { getRandomPic } from "../app/functions/getRandomPic";
 
 export const RandomImage = ({ imageData }: { imageData: ImageProps }) => {
   const [image, setImage] = useState<ImageProps>(imageData);
